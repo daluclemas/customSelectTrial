@@ -1,0 +1,117 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+body{
+    width:90%;
+    margin:auto;
+    height:100vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.custom-select{
+    width:100%;
+    height:60%;
+    border:1px hidden red;
+    text-align:center;
+    padding:3%;
+}
+
+.custom{
+    display:flex;
+    flex-direction: column;
+    width:250px;
+    position:relative;
+    border:1px hidden black;
+    margin:20px auto;
+}
+
+.item-select{
+    position:relative;
+    margin-bottom:30px;
+    border:1px hidden blue;
+    width:100%;
+    margin:auto;
+    height:30px;
+    background:dodgerblue;
+    padding:1px;
+}
+
+.item-select::after{
+    position:absolute;
+    content:"";
+    border-style:solid;
+    border-width:6px;
+    border-color:black transparent transparent;
+    bottom:5px;
+    right:5px;
+    cursor:pointer;
+}
+
+.selected.item-select::after{
+    border-color:transparent transparent white;
+    bottom:20px;
+}
+
+.item-value{
+    border:1px hidden red;
+    text-align:left;
+    display:flex;
+    max-width:100%;
+    max-height:100%;
+    padding:2px;
+}
+
+.item-value .select{
+    color:black;
+    font-size:20px;
+    text-transform:capitalize;
+    text-align:left;
+    border:1px hidden green;
+}
+
+.item-value .select.selected{
+    color:white;
+}
+
+.item-option{
+    position:absolute;
+    top:30px;
+    display:flex;
+    flex-direction: column;
+    width:100%;
+    height:0;
+    background:dodgerblue;
+    border:1px hidden blue;
+    transition:0.5s ease-out;
+}
+
+.item-option .select{
+    display:none;
+    color:white;
+    font-size:20px;
+    height:100%;
+    text-transform:capitalize;
+    text-align:left;
+    border:1px hidden green;
+    padding:5px 5px 5px 0px;
+}
+
+.selected.item-option{
+    height:auto;
+    
+}
+
+.selected.item-option .select{
+    display:block;
+}
+
+.item-value .select,.item-option .select{
+    padding-left:10px;
+    cursor:pointer;
+}
